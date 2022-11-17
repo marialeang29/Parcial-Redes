@@ -1,0 +1,22 @@
+def LinkState(vector0, vectorf, vectorc):
+    cost = []
+    notneighbours = []
+    
+    for i in range(0,len(vector0)):
+        arc = [vector0[i], vectorf[i]]
+        cost.append([arc, vectorc[i]])
+    
+    for i in range(0,len(vector0)):
+        for j in range(0,len(vectorf)):
+            for k in range(0,len(vectorc)):
+                if ([vector0[i], vectorf[j]] == cost[k][0]) or ([vectorf[j], vector0[i]] == cost[k][0]):
+                    print([vector0[i], vectorf[j]])
+    
+    
+    #for i in notneighbours:
+    #    cost.append([i, max(vectorc) +1])
+    
+    for i in range(0,len(cost)):
+        print(cost[i])
+    
+LinkState([0,0,0,1,1,2,2,2,3], [1,2,3,2,3,3,4,5,4], [2,5,1,3,2,3,1,5,1])
